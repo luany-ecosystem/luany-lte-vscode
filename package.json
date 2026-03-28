@@ -2,7 +2,7 @@
   "name": "luany-lte",
   "displayName": "Luany Template Engine - LTE",
   "description": "PHP template engine syntax highlighting, snippets and Emmet support for .lte files — blade-like templating with AST-driven parsing",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "publisher": "luany",
   "license": "MIT",
   "repository": {

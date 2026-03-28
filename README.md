@@ -6,61 +6,98 @@ Provides syntax highlighting, embedded language support, and smart snippets for 
 
 ---
 
-## ✨ Features
+## Features
 
-- 🧠 AST-based syntax highlighting
-- 🎨 Embedded CSS inside `@style` blocks
-- ⚡ Embedded JavaScript inside `@script` blocks
-- 🐘 Embedded PHP inside `{{ }}`, `{!! !!}`, and `@php` blocks
-- 🧩 Full directive support — v0.1 and v0.2
-- 📦 Smart snippets for all directives
+- Full LTE v1.0 directive coverage — all engine directives highlighted
+- Embedded CSS inside `@style` blocks
+- Embedded JavaScript inside `@script` blocks
+- Embedded PHP inside `{{ }}`, `{!! !!}`, and `@php` blocks
+- 30+ snippets covering 100% of the LTE v1.0 API
+- Auto-indent and auto-closing pairs for all LTE constructs
+- Emmet support inside `.lte` files
 
 ---
 
-## 📘 Supported Directives
+## Supported Directives
 
-### Core
+### Conditionals
+`@if` `@elseif` `@else` `@endif`
+`@unless` `@endunless`
+`@isset` `@endisset`
+`@ifempty` `@endifempty`
 
-`@if` `@elseif` `@else` `@endif` `@unless` `@endunless`
-`@foreach` `@endforeach` `@for` `@endfor` `@while` `@endwhile`
+### Loops
+`@foreach` `@endforeach`
 `@forelse` `@empty` `@endforelse`
-`@section` `@endsection` `@yield` `@extends` `@include`
-`@auth` `@endauth` `@guest` `@endguest`
-`@csrf` `@method` `@php` `@endphp`
+`@for` `@endfor`
+`@while` `@endwhile`
 
-### Asset Directives (v0.2)
+### Layout
+`@extends` `@section` `@endsection` `@yield` `@include`
 
+### Components & Slots
+`@component` `@endcomponent` `@slot` `@endslot`
+
+### Assets
 `@style` `@endstyle` `@script` `@endscript` `@styles` `@scripts`
 
-### Stack Directives (v0.2)
-
+### Stacks
 `@push` `@endpush` `@stack`
+
+### Auth Guards
+`@auth` `@endauth` `@guest` `@endguest`
+
+### Security & Forms
+`@csrf` `@method`
+
+### PHP
+`@php` `@endphp`
+
+### Output (new in v1.0)
+`@json` `@class`
+
+### Debug
+`@dump` `@dd`
 
 ---
 
 ## ⚡ Snippets
 
-| Prefix         | Description                              |
-| -------------- | ---------------------------------------- |
-| `layout`       | Official LTE v0.2 view structure         |
-| `component`    | Self-contained component with CSS and JS |
-| `if`           | `@if` / `@endif`                         |
-| `ifelse`       | `@if` / `@else` / `@endif`               |
-| `foreach`      | `@foreach` / `@endforeach`               |
-| `forelse`      | `@forelse` / `@empty` / `@endforelse`    |
-| `section`      | `@section` / `@endsection`               |
-| `style`        | `@style` / `@endstyle` CSS block         |
-| `script`       | `@script(defer)` / `@endscript` JS block |
-| `push`         | `@push` / `@endpush` stack block         |
-| `include`      | `@include` partial                       |
-| `include-data` | `@include` with data array               |
-| `csrf`         | `@csrf` hidden input                     |
-| `auth`         | `@auth` / `@endauth` guard               |
-| `guest`        | `@guest` / `@endguest` guard             |
+| Prefix | Description |
+|--------|-------------|
+| `layout` | Official LTE v1.0 view structure |
+| `component` | Self-contained component with CSS and JS |
+| `component-use` | `@component` / `@slot` / `@endcomponent` |
+| `if` | `@if` / `@endif` |
+| `ifelse` | `@if` / `@else` / `@endif` |
+| `unless` | `@unless` / `@endunless` |
+| `isset` | `@isset` / `@endisset` |
+| `ifempty` | `@ifempty` / `@endifempty` |
+| `foreach` | `@foreach` / `@endforeach` |
+| `forelse` | `@forelse` / `@empty` / `@endforelse` |
+| `for` | `@for` / `@endfor` |
+| `while` | `@while` / `@endwhile` |
+| `section` | `@section` / `@endsection` |
+| `style` | `@style` / `@endstyle` CSS block |
+| `script` | `@script(defer)` / `@endscript` JS block |
+| `push` | `@push` / `@endpush` stack block |
+| `include` | `@include` partial |
+| `include-data` | `@include` with data array |
+| `php` | `@php` / `@endphp` block |
+| `json` | `@json($data)` safe output |
+| `class` | `@class([...])` conditional classes |
+| `method` | `@method('PUT')` form spoofing |
+| `form` | Full form with `@csrf` |
+| `form-method` | Form with `@csrf` + `@method` |
+| `csrf` | `@csrf` hidden input |
+| `auth` | `@auth` / `@endauth` guard |
+| `guest` | `@guest` / `@endguest` guard |
+| `dump` | `@dump($var)` |
+| `dd` | `@dd($var)` |
 
 ---
 
-## 🧬 About Luany Template Engine
+## About Luany Template Engine
 
 LTE is a structured, AST-driven template engine for PHP. Parser → AST → Compiler. Zero regex in the entire pipeline.
 
@@ -70,7 +107,7 @@ LTE is a structured, AST-driven template engine for PHP. Parser → AST → Comp
 
 ---
 
-## 📦 Installation
+## Installation
 
 1. Open VS Code
 2. Go to Extensions (`Ctrl+Shift+X`)
@@ -79,28 +116,29 @@ LTE is a structured, AST-driven template engine for PHP. Parser → AST → Comp
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **António Ambrósio Ngola**
 
-- 📧 [antoniongola.dev@gmail.com](mailto:antoniongola.dev@gmail.com)
+- [antoniongola.dev@gmail.com](mailto:antoniongola.dev@gmail.com)
 - 🌍 Luanda, Angola 🇦🇴
 
 ---
 
 ## 🗺 Roadmap
 
-| Version | Focus                                                                 |
-| ------- | --------------------------------------------------------------------- |
-| v0.2.x  | DX refinement — folding, auto-indent, Emmet, semantic scopes          |
-| v0.3.x  | Engine AST stabilisation — `@forelse`, scope isolation, 96 unit tests |
-| v1.0.0  | API freeze — production-ready                                         |
-| v1.1.0  | LSP experimental — view path autocompletion, block diagnostics        |
+| Version | Focus |
+|---------|-------|
+| v1.0.0 | Production-ready — full directive coverage, 30+ snippets, auto-indent, Emmet |
+| v1.1.0 | LSP experimental — view path autocompletion, diagnostics |
+| v1.2.0 | Web playground — interactive LTE compiler sandbox |
 
-> **Stability note:** v0.x series has stable DX and evolving engine. v1.0.0 will mark full API freeze and production readiness.
+> **Status:** v1.0.0 is production-ready with frozen API. All directives stable. DX optimized for professional development.
 
-> **Folding note:** Block folding works correctly when LTE's official indentation is followed (`@style` / `@endstyle`, `@section` / `@endsection`, etc. — both markers remain visible). Full AST-based folding is planned for v0.3.x / LSP.
+> **Folding note:** Block folding works optimally when LTE's official indentation is followed. Full AST-based folding via LSP planned for v1.1.0+.
 
-## 📜 License
+---
+
+## License
 
 MIT

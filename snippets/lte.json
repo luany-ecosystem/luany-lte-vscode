@@ -1,5 +1,5 @@
 {
-  "Layout (v0.2)": {
+  "Layout (v1.0)": {
     "prefix": "layout",
     "body": [
       "@extends('layouts.${1:main}')",
@@ -22,7 +22,7 @@
       "    // ${5:page JS}",
       "@endscript"
     ],
-    "description": "Official LTE v0.2 view structure"
+    "description": "Official LTE v1.0 view structure"
   },
 
   "Component": {
