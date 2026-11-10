@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.0] — Unreleased
+
+### Fixed
+- Directive arguments are matched with a recursive rule — any parenthesis depth is highlighted correctly (previously >3 levels could colour the rest of the file as PHP).
+- `@php` is case-sensitive, matching the engine (`@PHP` is plain text).
+- Email addresses and other `word@word` text are never highlighted as directives.
+- `{{ }}` / `{!! !!}` are highlighted inside HTML attribute values, `<script>` and `<style>`.
+- `LICENSE` now contains the full MIT text.
+
+### Added
+- `@@` and `@{{ }}` escapes highlighted as literals.
+- Snippets: `@component` with `@slot`, `@slot`, `@json`, `@class`, `@method`, `@{{ }}`.
+- Grammar test suite (`npm test`) against the pinned VS Code HTML/PHP/CSS/JS grammars, and CI that runs it and packages the extension.
+
+### Changed
+- Removed intrusive editor defaults (`editor.wordWrap`, `editor.formatOnType`, `editor.suggest.insertMode`) — user settings are respected. Emmet for `.lte` and smart indentation remain.
+
+---
+
 ## [1.0.0] — 2026-03-28
 
 ### Added

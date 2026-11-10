@@ -1,0 +1,19 @@
+{{-- SYNTAX TEST "text.lte" "directives, arguments and escapes"
+@if ($user->isAdmin(count($a), max(1, min(2, abs(-3)))))
+{{-- <- keyword.control.conditional.lte
+{{--                                                   ^ punctuation.definition.arguments.end.lte
+<p>Contact dev@php.net or me@if.com</p>
+{{--          ^^^^ - keyword.control.php.lte
+{{--                        ^^^ - keyword.control.conditional.lte
+@endif
+{{-- <- keyword.control.conditional.lte
+@@if literal
+{{-- <- constant.character.escape.lte
+@PHP not a directive
+{{-- <- - keyword.control.php.lte
+@php($x = 1)
+{{-- <- keyword.control.php.lte
+@json(['a' => 1, 'b' => [2, 3]])
+{{-- <- keyword.control.output.lte
+@csrf
+{{-- <- keyword.control.security.lte
