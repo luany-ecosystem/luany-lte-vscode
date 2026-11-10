@@ -1,10 +1,14 @@
 .vscode/**
+.github/**
 node_modules/**
 .git/**
 .gitignore
 images/**
+scripts/**
+test/**
 *.map
 *.log
+*.vsix
 tsconfig.json
 yarn.lock
 package-lock.json

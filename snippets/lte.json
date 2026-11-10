@@ -24,7 +24,6 @@
     ],
     "description": "Official LTE v1.0 view structure"
   },
-
   "Component": {
     "prefix": "component",
     "body": [
@@ -46,7 +45,6 @@
     ],
     "description": "Self-contained LTE component with collocated CSS and JS"
   },
-
   "If": {
     "prefix": "if",
     "body": [
@@ -56,7 +54,6 @@
     ],
     "description": "@if / @endif block"
   },
-
   "If Else": {
     "prefix": "ifelse",
     "body": [
@@ -68,7 +65,6 @@
     ],
     "description": "@if / @else / @endif block"
   },
-
   "Foreach": {
     "prefix": "foreach",
     "body": [
@@ -78,7 +74,6 @@
     ],
     "description": "@foreach / @endforeach loop"
   },
-
   "Forelse": {
     "prefix": "forelse",
     "body": [
@@ -90,7 +85,6 @@
     ],
     "description": "@forelse / @empty / @endforelse loop with empty state"
   },
-
   "Section": {
     "prefix": "section",
     "body": [
@@ -100,7 +94,6 @@
     ],
     "description": "@section / @endsection block"
   },
-
   "Style Block": {
     "prefix": "style",
     "body": [
@@ -110,7 +103,6 @@
     ],
     "description": "Inline CSS block — accumulated by AssetStack"
   },
-
   "Script Block": {
     "prefix": "script",
     "body": [
@@ -120,7 +112,6 @@
     ],
     "description": "Inline JS block with defer — accumulated by AssetStack"
   },
-
   "Push": {
     "prefix": "push",
     "body": [
@@ -130,7 +121,6 @@
     ],
     "description": "@push / @endpush — push content into named stack"
   },
-
   "Include": {
     "prefix": "include",
     "body": [
@@ -138,7 +128,6 @@
     ],
     "description": "@include partial view"
   },
-
   "Include with data": {
     "prefix": "include-data",
     "body": [
@@ -146,13 +135,13 @@
     ],
     "description": "@include partial view with data"
   },
-
   "CSRF": {
     "prefix": "csrf",
-    "body": ["@csrf"],
+    "body": [
+      "@csrf"
+    ],
     "description": "CSRF hidden input field"
   },
-
   "Auth": {
     "prefix": "auth",
     "body": [
@@ -162,7 +151,6 @@
     ],
     "description": "@auth / @endauth guard block"
   },
-
   "Guest": {
     "prefix": "guest",
     "body": [
@@ -171,5 +159,71 @@
       "@endguest"
     ],
     "description": "@guest / @endguest guard block"
+  },
+  "Component with slot": {
+    "prefix": [
+      "@component",
+      "component"
+    ],
+    "body": [
+      "@component('${1:components.alert}', [${2:'type' => 'info'}])",
+      "\t@slot('${3:title}')",
+      "\t\t$4",
+      "\t@endslot",
+      "\t$0",
+      "@endcomponent"
+    ],
+    "description": "LTE component with a named slot"
+  },
+  "Slot": {
+    "prefix": [
+      "@slot",
+      "slot"
+    ],
+    "body": [
+      "@slot('${1:name}')",
+      "\t$0",
+      "@endslot"
+    ],
+    "description": "Named slot inside a component"
+  },
+  "JSON": {
+    "prefix": [
+      "@json",
+      "json"
+    ],
+    "body": [
+      "@json(${1:\\$data})"
+    ],
+    "description": "Safe JSON output for inline JavaScript"
+  },
+  "Class": {
+    "prefix": [
+      "@class",
+      "class"
+    ],
+    "body": [
+      "@class(['${1:btn}', '${2:active}' => ${3:\\$isActive}])"
+    ],
+    "description": "Conditional CSS classes"
+  },
+  "Method": {
+    "prefix": [
+      "@method",
+      "method"
+    ],
+    "body": [
+      "@method('${1|PUT,PATCH,DELETE|}')"
+    ],
+    "description": "HTTP method spoofing field"
+  },
+  "Escaped echo literal": {
+    "prefix": [
+      "@{{"
+    ],
+    "body": [
+      "@{{ ${1:value} }}"
+    ],
+    "description": "Output literal {{ }} (not compiled)"
   }
 }
