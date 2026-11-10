@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [1.1.0] — Unreleased
+## [1.1.0] — 2026-11-10
 
 ### Fixed
 - Directive arguments are matched with a recursive rule — any parenthesis depth is highlighted correctly (previously >3 levels could colour the rest of the file as PHP).
