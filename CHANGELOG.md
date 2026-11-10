@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.1] — 2026-11-10
+
+### Added
+- Snippets advertised in the README but missing from the package: `component-use`, `unless`, `isset`, `ifempty`, `for`, `while`, `php`, `form`, `form-method`, `dump`, `dd`.
+
+### Changed
+- README describes the 1.1 grammar features accurately (no "AST-driven" claim); snippet table generated from the snippet file.
+- Keywords: removed `ast` and `compiler`.
+
+---
+
 ## [1.1.0] — 2026-11-10
 
 ### Fixed

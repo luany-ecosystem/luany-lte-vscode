@@ -1,29 +1,4 @@
 {
-  "Layout (v1.0)": {
-    "prefix": "layout",
-    "body": [
-      "@extends('layouts.${1:main}')",
-      "",
-      "@section('title', '${2:Page Title}')",
-      "",
-      "@push('head')",
-      "    <meta name=\"description\" content=\"${3:}\">",
-      "@endpush",
-      "",
-      "@style",
-      "    /* ${4:page CSS} */",
-      "@endstyle",
-      "",
-      "@section('content')",
-      "    $0",
-      "@endsection",
-      "",
-      "@script(defer)",
-      "    // ${5:page JS}",
-      "@endscript"
-    ],
-    "description": "Official LTE v1.0 view structure"
-  },
   "Component": {
     "prefix": "component",
     "body": [
@@ -162,8 +137,8 @@
   },
   "Component with slot": {
     "prefix": [
-      "@component",
-      "component"
+      "component-use",
+      "@component"
     ],
     "body": [
       "@component('${1:components.alert}', [${2:'type' => 'info'}])",
@@ -225,5 +200,149 @@
       "@{{ ${1:value} }}"
     ],
     "description": "Output literal {{ }} (not compiled)"
+  },
+  "Unless": {
+    "prefix": [
+      "unless",
+      "@unless"
+    ],
+    "body": [
+      "@unless(${1:\\$condition})",
+      "\t$0",
+      "@endunless"
+    ],
+    "description": "@unless / @endunless block"
+  },
+  "Isset": {
+    "prefix": [
+      "isset",
+      "@isset"
+    ],
+    "body": [
+      "@isset(${1:\\$var})",
+      "\t$0",
+      "@endisset"
+    ],
+    "description": "@isset / @endisset block"
+  },
+  "If empty": {
+    "prefix": [
+      "ifempty",
+      "@ifempty"
+    ],
+    "body": [
+      "@ifempty(${1:\\$var})",
+      "\t$0",
+      "@endifempty"
+    ],
+    "description": "@ifempty / @endifempty block"
+  },
+  "For": {
+    "prefix": [
+      "for",
+      "@for"
+    ],
+    "body": [
+      "@for(\\$${1:i} = 0; \\$${1:i} < ${2:10}; \\$${1:i}++)",
+      "\t$0",
+      "@endfor"
+    ],
+    "description": "@for / @endfor loop"
+  },
+  "While": {
+    "prefix": [
+      "while",
+      "@while"
+    ],
+    "body": [
+      "@while(${1:\\$condition})",
+      "\t$0",
+      "@endwhile"
+    ],
+    "description": "@while / @endwhile loop"
+  },
+  "PHP block": {
+    "prefix": [
+      "php",
+      "@php"
+    ],
+    "body": [
+      "@php",
+      "\t$0",
+      "@endphp"
+    ],
+    "description": "@php / @endphp block"
+  },
+  "Form": {
+    "prefix": [
+      "form"
+    ],
+    "body": [
+      "<form method=\"POST\" action=\"${1:/}\">",
+      "\t@csrf",
+      "\t$0",
+      "\t<button type=\"submit\">${2:Save}</button>",
+      "</form>"
+    ],
+    "description": "POST form with @csrf"
+  },
+  "Form with method": {
+    "prefix": [
+      "form-method"
+    ],
+    "body": [
+      "<form method=\"POST\" action=\"${1:/}\">",
+      "\t@csrf",
+      "\t@method('${2|PUT,PATCH,DELETE|}')",
+      "\t$0",
+      "\t<button type=\"submit\">${3:Save}</button>",
+      "</form>"
+    ],
+    "description": "Form with @csrf and @method spoofing"
+  },
+  "Dump": {
+    "prefix": [
+      "dump",
+      "@dump"
+    ],
+    "body": [
+      "@dump(${1:\\$var})"
+    ],
+    "description": "@dump($var) — no-op when debug is off"
+  },
+  "Dump and die": {
+    "prefix": [
+      "dd",
+      "@dd"
+    ],
+    "body": [
+      "@dd(${1:\\$var})"
+    ],
+    "description": "@dd($var) — no-op when debug is off"
+  },
+  "Layout": {
+    "prefix": "layout",
+    "body": [
+      "@extends('layouts.${1:main}')",
+      "",
+      "@section('title', '${2:Page Title}')",
+      "",
+      "@push('head')",
+      "    <meta name=\"description\" content=\"${3:}\">",
+      "@endpush",
+      "",
+      "@style",
+      "    /* ${4:page CSS} */",
+      "@endstyle",
+      "",
+      "@section('content')",
+      "    $0",
+      "@endsection",
+      "",
+      "@script(defer)",
+      "    // ${5:page JS}",
+      "@endscript"
+    ],
+    "description": "Official LTE view structure"
   }
 }
