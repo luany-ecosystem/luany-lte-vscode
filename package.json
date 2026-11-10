@@ -1,8 +1,8 @@
 {
   "name": "luany-lte",
   "displayName": "Luany Template Engine - LTE",
-  "description": "PHP template engine syntax highlighting, snippets and Emmet support for .lte files — blade-like templating with AST-driven parsing",
-  "version": "1.0.0",
+  "description": "Syntax highlighting, snippets and Emmet support for Luany Template Engine (.lte) files",
+  "version": "1.1.0",
   "publisher": "luany",
   "license": "MIT",
   "repository": {
@@ -76,9 +76,6 @@
     "configurationDefaults": {
       "[lte]": {
         "editor.autoIndent": "full",
-        "editor.formatOnType": true,
-        "editor.suggest.insertMode": "replace",
-        "editor.wordWrap": "on",
         "editor.quickSuggestions": {
           "other": true,
           "comments": false,
@@ -89,5 +86,14 @@
         "lte": "html"
       }
     }
+  },
+  "scripts": {
+    "fetch-grammars": "sh scripts/fetch-grammars.sh",
+    "test": "vscode-tmgrammar-test -g test/grammars/html.tmLanguage.json -g test/grammars/php.tmLanguage.json -g test/grammars/php-html.tmLanguage.json -g test/grammars/css.tmLanguage.json -g test/grammars/JavaScript.tmLanguage.json -g syntaxes/lte.tmLanguage.json \"test/cases/*.test.lte\"",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "vscode-tmgrammar-test": "^0.1.3",
+    "@vscode/vsce": "^3.2.1"
   }
 }

@@ -1,0 +1,8 @@
+{{-- SYNTAX TEST "text.lte" "echoes in text, attributes, script and style"
+<a href="{{ $url }}" class="x">{{ $label }}</a>
+{{--     ^^ punctuation.definition.template.begin.lte
+{{--                           ^^ punctuation.definition.template.begin.lte
+<script>const data = {!! $json !!};</script>
+{{--                 ^^^ punctuation.definition.template.begin.lte
+<style>.a { color: {{ $c }}; }</style>
+{{--               ^^ punctuation.definition.template.begin.lte
