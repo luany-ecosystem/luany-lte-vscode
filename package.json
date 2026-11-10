@@ -2,7 +2,7 @@
   "name": "luany-lte",
   "displayName": "Luany Template Engine - LTE",
   "description": "Syntax highlighting, snippets and Emmet support for Luany Template Engine (.lte) files",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "luany",
   "license": "MIT",
   "repository": {
@@ -28,15 +28,14 @@
     "templating",
     "html",
     "syntax highlighting",
-    "ast",
-    "compiler",
     "blade-like",
     "php template",
     "blade syntax",
     "php views",
     "template syntax highlighting",
     "mvc",
-    "php snippets"
+    "php snippets",
+    "luany framework"
   ],
   "icon": "icons/luany-icon.png",
   "contributes": {
