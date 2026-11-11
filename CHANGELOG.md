@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.2.0] — Unreleased
+
+### Added
+- **File icon** — `.lte` files show the Luany icon (language icon contribution; used by themes without a specific icon for LTE, including the built-in Seti and Minimal).
+- **Editor diagnostics** — on open and save, runs `luany view:check --format=github` and shows structure and PHP syntax errors at their exact position and in the Problems panel. Command **Luany LTE: Validate views**; settings `luanyLte.validate.enabled`, `luanyLte.validate.bootApp`, `luanyLte.cliPath`. Clear message when the CLI is not installed.
+
+### Fixed
+- `@endempty` (closes `@empty($x)`, LTE ≥ 1.1) was not highlighted as a directive.
+
+---
+
 ## [1.1.1] — 2026-11-10
 
 ### Added

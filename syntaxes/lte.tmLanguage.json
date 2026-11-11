@@ -424,7 +424,7 @@
         },
         {
           "name": "keyword.control.loop.lte",
-          "match": "(?<![\\w.@])@(endforeach|endforelse|endfor|endwhile|empty)\\b"
+          "match": "(?<![\\w.@])@(endforeach|endforelse|endfor|endwhile|endempty|empty)\\b"
         },
         {
           "name": "keyword.control.layout.lte",
