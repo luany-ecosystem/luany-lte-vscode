@@ -2,7 +2,7 @@
   "name": "luany-lte",
   "displayName": "Luany Template Engine - LTE",
   "description": "Syntax highlighting, snippets and Emmet support for Luany Template Engine (.lte) files",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "publisher": "luany",
   "license": "MIT",
   "repository": {
@@ -49,7 +49,11 @@
         "extensions": [
           ".lte"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/lte-file.png",
+          "dark": "./icons/lte-file.png"
+        }
       }
     ],
     "grammars": [
@@ -84,15 +88,47 @@
       "emmet.includeLanguages": {
         "lte": "html"
       }
+    },
+    "commands": [
+      {
+        "command": "luanyLte.validateViews",
+        "title": "Validate views",
+        "category": "Luany LTE"
+      }
+    ],
+    "configuration": {
+      "title": "Luany LTE",
+      "properties": {
+        "luanyLte.validate.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show LTE structure and PHP syntax errors (runs `luany view:check` on open and save). Requires luany/cli >= 1.4."
+        },
+        "luanyLte.validate.bootApp": {
+          "type": "boolean",
+          "default": false,
+          "description": "Boot the application while validating, so directives registered by service providers are known. Slower."
+        },
+        "luanyLte.cliPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the luany executable. Empty: vendor/bin/luany in the project, then `luany` on PATH."
+        }
+      }
     }
   },
   "scripts": {
     "fetch-grammars": "sh scripts/fetch-grammars.sh",
-    "test": "vscode-tmgrammar-test -g test/grammars/html.tmLanguage.json -g test/grammars/php.tmLanguage.json -g test/grammars/php-html.tmLanguage.json -g test/grammars/css.tmLanguage.json -g test/grammars/JavaScript.tmLanguage.json -g syntaxes/lte.tmLanguage.json \"test/cases/*.test.lte\"",
+    "test": "node --test test/unit/annotations.test.js && vscode-tmgrammar-test -g test/grammars/html.tmLanguage.json -g test/grammars/php.tmLanguage.json -g test/grammars/php-html.tmLanguage.json -g test/grammars/css.tmLanguage.json -g test/grammars/JavaScript.tmLanguage.json -g syntaxes/lte.tmLanguage.json \"test/cases/*.test.lte\"",
     "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
     "vscode-tmgrammar-test": "^0.1.3",
     "@vscode/vsce": "^3.2.1"
-  }
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:lte",
+    "workspaceContains:**/*.lte"
+  ]
 }
