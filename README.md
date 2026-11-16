@@ -114,7 +114,7 @@ Command palette: **Luany LTE: Validate views**.
 | `while` | @while / @endwhile loop |
 | `section` | @section / @endsection block |
 | `style` | Inline CSS block — accumulated by AssetStack |
-| `script` | Inline JS block with defer — accumulated by AssetStack |
+| `script` | Inline JS block — collected by AssetStack, printed by @scripts (options: module, defer, async) |
 | `push` | @push / @endpush — push content into named stack |
 | `include` | @include partial view |
 | `include-data` | @include partial view with data |
