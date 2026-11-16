@@ -18,7 +18,9 @@ let collection;
 let output;
 const timers = new Map();
 const running = new Set();
+const pending = new Set();
 let warnedMissingCli = false;
+let warnedFailure = false;
 
 function activate(context) {
     collection = vscode.languages.createDiagnosticCollection('lte');
@@ -83,8 +85,18 @@ function command(root) {
     return { file: 'luany', args: [] };
 }
 
+/** The CLI could not be started at all (as opposed to failing while running). */
+function cliMissing(error, stderr) {
+    if (error.code === 'ENOENT' || error.code === 127) {
+        return true;
+    }
+    return process.platform === 'win32'
+        && /is not recognized as an internal or external command/i.test(String(stderr));
+}
+
 function validate(root, manual = false) {
     if (running.has(root)) {
+        pending.add(root);   // re-run once the current check finishes
         return;
     }
     running.add(root);
@@ -104,8 +116,11 @@ function validate(root, manual = false) {
         env: { ...process.env, NO_COLOR: '1' },
     }, (error, stdout, stderr) => {
         running.delete(root);
+        if (pending.delete(root)) {
+            debounce(root, () => validate(root));
+        }
 
-        if (error && (error.code === 'ENOENT' || /not recognized|not found/i.test(String(stderr)))) {
+        if (error && cliMissing(error, stderr)) {
             if (!warnedMissingCli || manual) {
                 warnedMissingCli = true;
                 vscode.window.showWarningMessage(
@@ -117,9 +132,16 @@ function validate(root, manual = false) {
 
         const problems = parseAnnotations(stdout, root);
 
-        if (error && problems.length === 0 && error.code !== 1) {
-            output.appendLine(`[view:check] ${String(stderr || stdout || error.message).trim()}`);
-            if (manual) {
+        // A failure without annotations is not "no problems": keep the current
+        // diagnostics and say why (old CLI, broken app bootstrap, timeout…).
+        if (error && problems.length === 0) {
+            const detail = String(stderr || stdout || error.message).trim();
+            output.appendLine(`[view:check] exit ${error.code ?? error.signal}: ${detail}`);
+            if (/format|not defined|does not exist/i.test(detail)) {
+                output.appendLine('[view:check] Editor diagnostics need luany/cli >= 1.4 — run "composer global update luany/cli".');
+            }
+            if (manual || !warnedFailure) {
+                warnedFailure = true;
                 vscode.window.showWarningMessage('Luany LTE: view:check failed — see the "Luany LTE" output channel.');
             }
             return;
