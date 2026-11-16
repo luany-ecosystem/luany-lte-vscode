@@ -12,7 +12,7 @@
       "    $0",
       "</div>",
       "",
-      "@script(defer)",
+      "@script",
       "    document.querySelectorAll('.${1:component-name}').forEach(function(el) {",
       "        $3",
       "    });",
@@ -81,11 +81,11 @@
   "Script Block": {
     "prefix": "script",
     "body": [
-      "@script(defer)",
+      "@script",
       "    ${0}",
       "@endscript"
     ],
-    "description": "Inline JS block with defer — accumulated by AssetStack"
+    "description": "Inline JS block — collected by AssetStack, printed by @scripts (options: module, defer, async)"
   },
   "Push": {
     "prefix": "push",
@@ -339,7 +339,7 @@
       "    $0",
       "@endsection",
       "",
-      "@script(defer)",
+      "@script",
       "    // ${5:page JS}",
       "@endscript"
     ],

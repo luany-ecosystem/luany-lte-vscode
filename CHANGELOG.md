@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Marketplace description and README feature list mention the file icon and editor diagnostics; highlighting is described for LTE 1.1 and later (no new directives since 1.1).
+- `script` and component snippets insert a plain `@script`: browsers ignore `defer` on inline scripts (LTE 1.3 adds `@script(module)`).
 
 ---
 
