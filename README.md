@@ -8,7 +8,9 @@ Provides syntax highlighting, embedded language support, and smart snippets for 
 
 ## Features
 
-- Highlighting for every LTE 1.1 directive, with PHP arguments at any parenthesis depth
+- **Luany file icon** for `.lte` files
+- **Errors in the editor** — LTE structure and PHP syntax errors at their exact line, on open and save (via `luany view:check`)
+- Highlighting for every LTE directive (LTE 1.1 and later), with PHP arguments at any parenthesis depth
 - `{{ }}` and `{!! !!}` highlighted in text, HTML attribute values, `<script>` and `<style>`
 - Embedded CSS inside `@style` blocks and JavaScript inside `@script` blocks
 - Embedded PHP inside `{{ }}`, `{!! !!}`, `@php` blocks and directive arguments
