@@ -20,7 +20,34 @@ Provides syntax highlighting, embedded language support, and smart snippets for 
 
 ---
 
-## Supported Directives
+## File icon
+
+`.lte` files show the Luany icon in the Explorer, tabs and quick open.
+
+VS Code uses a language's own icon when the active **File Icon Theme** has no specific
+icon for it — this is the case for the built-in themes (*Seti*, *Minimal*). Themes that
+ship their own full icon set (e.g. *Material Icon Theme*) may keep showing their generic
+file icon.
+
+## Errors in the editor
+
+When you open or save a `.lte` file, the extension runs `luany view:check` (luany/cli ≥ 1.4)
+and underlines problems at their exact line and column — also listed in the **Problems**
+panel:
+
+- unclosed, stray or crossed blocks (`@if` … `@endforeach`)
+- misplaced `@else` / `@elseif` / `@empty`, missing directive arguments
+- PHP syntax errors inside `{{ }}`, `{!! !!}`, `@php` and directive arguments
+
+Command palette: **Luany LTE: Validate views**.
+
+| Setting | Default | |
+|---|---|---|
+| `luanyLte.validate.enabled` | `true` | Turn editor validation on/off |
+| `luanyLte.validate.bootApp` | `false` | Boot the app so provider-registered directives are known (slower) |
+| `luanyLte.cliPath` | `""` | `luany` executable; empty = `vendor/bin/luany`, then `luany` on PATH |
+
+
 
 ### Conditionals
 `@if` `@elseif` `@else` `@endif`
@@ -138,7 +165,8 @@ LTE is the template engine of the Luany framework: `.lte` files are parsed by a 
 |---------|-------|
 | v1.0.0 | Full directive coverage, snippets, auto-indent, Emmet |
 | v1.1.x | Grammar aligned with LTE 1.1 (escapes, nested arguments, echoes in attributes), grammar test suite |
-| next | Language server — view-path completion, diagnostics, folding |
+| v1.2.x | File icon, editor diagnostics via `luany view:check` |
+| next | View-path completion and go-to-definition for `@extends` / `@include` |
 
 ---
 
