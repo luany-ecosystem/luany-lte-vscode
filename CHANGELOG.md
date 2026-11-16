@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [1.2.0] — Unreleased
+## [1.2.0] — 2026-11-16
 
 ### Added
 - **File icon** — `.lte` files show the Luany icon (language icon contribution; used by themes without a specific icon for LTE, including the built-in Seti and Minimal).
