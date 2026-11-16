@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [1.2.1] — Unreleased
+## [1.2.1] — 2026-11-16
 
 ### Changed
 - Marketplace description and README feature list mention the file icon and editor diagnostics; highlighting is described for LTE 1.1 and later (no new directives since 1.1).
