@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [Unreleased]
+
+### Added
+- **Portuguese directives** (LTE 1.4, `syntax = pt`): highlighting, indentation and snippets for `@se`/`@senao`/`@fimse`, `@paracada`, `@listar`…`@vazio`, `@secao` (and `@seção`/`@secção`/`@seccao`), `@estende`, `@incluir`, `@componente`, `@autenticado`, `@visitante`, `@classe`, `@metodo` and their closers. Snippet prefixes: `se`, `sesenao`, `paracada`, `listar`, `secao`, `estende`, `incluir`, `autenticado`, `visitante`, `enquanto`.
+
+---
+
 ## [1.2.1] — 2026-11-16
 
 ### Changed

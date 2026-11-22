@@ -37,17 +37,17 @@
   ],
 
   "indentationRules": {
-    "increaseIndentPattern": "^(?!.*@end)(?!.*@else)(?!.*@empty)^\\s*@(if|unless|foreach|forelse|for|while|isset|ifempty|section|style|script|push|component|slot|auth|guest|php)(\\(.*\\))?\\s*$",
-    "decreaseIndentPattern": "^\\s*@(endif|endunless|endforeach|endforelse|endfor|endwhile|endisset|endifempty|endsection|stop|endstyle|endscript|endpush|endcomponent|endslot|endauth|endguest|endphp|else|elseif|empty)\\b"
+    "increaseIndentPattern": "^(?!.*@end)(?!.*@fim)(?!.*@else)(?!.*@sen)(?!.*@empty)^\\s*@(if|unless|foreach|forelse|for|while|isset|ifempty|section|style|script|push|component|slot|auth|guest|se|exceto|paracada|listar|para|enquanto|definido|sevazio|secao|seccao|seção|secção|componente|autenticado|visitante|php)(\\(.*\\))?\\s*$",
+    "decreaseIndentPattern": "^\\s*@(endif|endunless|endforeach|endforelse|endfor|endwhile|endisset|endifempty|endsection|stop|endstyle|endscript|endpush|endcomponent|endslot|endauth|endguest|endphp|else|elseif|empty|fim\\w+|senao|senão|senaose|senãose|vazio)(?![\\w\\u00C0-\\u024F])"
   },
 
   "onEnterRules": [
     {
-      "beforeText": "^\\s*@(if|unless|foreach|forelse|for|while|isset|ifempty|section|style|script|push|component|slot|auth|guest)(\\(.*\\))?\\s*$",
+      "beforeText": "^\\s*@(if|unless|foreach|forelse|for|while|isset|ifempty|section|style|script|push|component|slot|auth|guest|se|exceto|paracada|listar|para|enquanto|definido|sevazio|secao|seccao|seção|secção|componente|autenticado|visitante)(\\(.*\\))?\\s*$",
       "action": { "indentAction": "indent" }
     },
     {
-      "beforeText": "^\\s*@(else|elseif|empty)(\\(.*\\))?\\s*$",
+      "beforeText": "^\\s*@(else|elseif|empty|senao|senão|senaose|senãose|vazio)(\\(.*\\))?\\s*$",
       "action": { "indentAction": "indentOutdent" }
     }
   ],

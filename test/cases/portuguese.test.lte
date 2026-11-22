@@ -1,0 +1,19 @@
+{{-- SYNTAX TEST "text.lte" "portuguese directive aliases"
+@se ($a)
+{{-- <- keyword.control.conditional.lte
+@senaose($b)
+{{-- <- keyword.control.conditional.lte
+@senão
+{{-- <- keyword.control.conditional.lte
+@fimse
+{{-- <- keyword.control.conditional.lte
+@paracada($itens as $item)
+{{-- <- keyword.control.loop.lte
+@fimparacada
+{{-- <- keyword.control.loop.lte
+@secção('conteudo')
+{{-- <- keyword.control.layout.lte
+@fimsecao
+{{-- <- keyword.control.layout.lte
+<p>Contacte me@se.ao</p>
+{{--          ^^^ - keyword.control.conditional.lte

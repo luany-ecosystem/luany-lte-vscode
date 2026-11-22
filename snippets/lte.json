@@ -344,5 +344,99 @@
       "@endscript"
     ],
     "description": "Official LTE view structure"
+  },
+  "Se (pt)": {
+    "prefix": "se",
+    "body": [
+      "@se(${1:condicao})",
+      "    $0",
+      "@fimse"
+    ],
+    "description": "@se / @fimse (syntax pt)"
+  },
+  "Se Senão (pt)": {
+    "prefix": "sesenao",
+    "body": [
+      "@se(${1:condicao})",
+      "    $2",
+      "@senao",
+      "    $0",
+      "@fimse"
+    ],
+    "description": "@se / @senao / @fimse (syntax pt)"
+  },
+  "Para cada (pt)": {
+    "prefix": "paracada",
+    "body": [
+      "@paracada(${1:\\$itens} as ${2:\\$item})",
+      "    $0",
+      "@fimparacada"
+    ],
+    "description": "@paracada / @fimparacada (syntax pt)"
+  },
+  "Listar (pt)": {
+    "prefix": "listar",
+    "body": [
+      "@listar(${1:\\$itens} as ${2:\\$item})",
+      "    $3",
+      "@vazio",
+      "    <p>${0:Sem resultados.}</p>",
+      "@fimlistar"
+    ],
+    "description": "@listar / @vazio / @fimlistar (syntax pt)"
+  },
+  "Secção (pt)": {
+    "prefix": "secao",
+    "body": [
+      "@secao('${1:conteudo}')",
+      "    $0",
+      "@fimsecao"
+    ],
+    "description": "@secao / @fimsecao (syntax pt)"
+  },
+  "Estende (pt)": {
+    "prefix": "estende",
+    "body": [
+      "@estende('${1:layouts.main}')",
+      "",
+      "@secao('${2:conteudo}')",
+      "    $0",
+      "@fimsecao"
+    ],
+    "description": "@estende + @secao (syntax pt)"
+  },
+  "Incluir (pt)": {
+    "prefix": "incluir",
+    "body": [
+      "@incluir('${1:parcial}')"
+    ],
+    "description": "@incluir (syntax pt)"
+  },
+  "Autenticado (pt)": {
+    "prefix": "autenticado",
+    "body": [
+      "@autenticado",
+      "    $0",
+      "@fimautenticado"
+    ],
+    "description": "@autenticado / @fimautenticado (syntax pt)"
+  },
+  "Visitante (pt)": {
+    "prefix": "visitante",
+    "body": [
+      "@visitante",
+      "    $0",
+      "@fimvisitante"
+    ],
+    "description": "@visitante / @fimvisitante (syntax pt)"
+  },
+  "Enquanto (pt)": {
+    "prefix": "enquanto",
+    "body": [
+      "@enquanto(${1:condicao})",
+      "    $0",
+      "@fimenquanto"
+    ],
+    "description": "@enquanto / @fimenquanto (syntax pt)"
   }
 }

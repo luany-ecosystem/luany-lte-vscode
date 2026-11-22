@@ -195,7 +195,7 @@
       "patterns": [
         {
           "comment": "Conditionals",
-          "begin": "(?<![\\w.@])(@(?:if|elseif|unless))\\s*(\\()",
+          "begin": "(?<![\\w.@])(@(?:if|elseif|unless|senaose|senãose|se|exceto))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.conditional.lte"
@@ -219,7 +219,7 @@
         },
         {
           "comment": "Variable checks",
-          "begin": "(?<![\\w.@])(@(?:isset|ifempty|empty))\\s*(\\()",
+          "begin": "(?<![\\w.@])(@(?:isset|ifempty|empty|definido|sevazio|vazio))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.conditional.lte"
@@ -243,7 +243,7 @@
         },
         {
           "comment": "Loops",
-          "begin": "(?<![\\w.@])(@(?:foreach|forelse|for|while))\\s*(\\()",
+          "begin": "(?<![\\w.@])(@(?:foreach|forelse|for|while|paracada|listar|para|enquanto))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.loop.lte"
@@ -267,7 +267,7 @@
         },
         {
           "comment": "Layout",
-          "begin": "(?<![\\w.@])(@(?:section|yield|extends|include))\\s*(\\()",
+          "begin": "(?<![\\w.@])(@(?:section|yield|extends|include|secao|seccao|seção|secção|exibir|estende|incluir))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.layout.lte"
@@ -291,7 +291,7 @@
         },
         {
           "comment": "Components",
-          "begin": "(?<![\\w.@])(@(?:component|slot))\\s*(\\()",
+          "begin": "(?<![\\w.@])(@(?:component|slot|componente))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.component.lte"
@@ -339,7 +339,7 @@
         },
         {
           "comment": "Output helpers",
-          "begin": "(?<![\\w.@])(@(?:json|class))\\s*(\\()",
+          "begin": "(?<![\\w.@])(@(?:json|class|classe))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.output.lte"
@@ -387,7 +387,7 @@
         },
         {
           "comment": "@method",
-          "begin": "(?<![\\w.@])(@(?:method))\\s*(\\()",
+          "begin": "(?<![\\w.@])(@(?:method|metodo|método))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.security.lte"
@@ -416,23 +416,23 @@
       "patterns": [
         {
           "name": "keyword.control.conditional.lte",
-          "match": "(?<![\\w.@])@(endif|endunless|else|elseif)\\b"
+          "match": "(?<![\\w.@])@(endif|endunless|else|elseif|fimse|fimexceto|senão|senao)(?![\\p{L}\\p{N}_])"
         },
         {
           "name": "keyword.control.conditional.lte",
-          "match": "(?<![\\w.@])@(endisset|endifempty)\\b"
+          "match": "(?<![\\w.@])@(endisset|endifempty|fimdefinido|fimsevazio)\\b"
         },
         {
           "name": "keyword.control.loop.lte",
-          "match": "(?<![\\w.@])@(endforeach|endforelse|endfor|endwhile|endempty|empty)\\b"
+          "match": "(?<![\\w.@])@(endforeach|endforelse|endfor|endwhile|endempty|empty|fimparacada|fimlistar|fimpara|fimenquanto|fimvazio|vazio)\\b"
         },
         {
           "name": "keyword.control.layout.lte",
-          "match": "(?<![\\w.@])@(endsection|stop)\\b"
+          "match": "(?<![\\w.@])@(endsection|stop|fimsecao|fimseccao|fimseção|fimsecção)(?![\\p{L}\\p{N}_])"
         },
         {
           "name": "keyword.control.component.lte",
-          "match": "(?<![\\w.@])@(endcomponent|endslot)\\b"
+          "match": "(?<![\\w.@])@(endcomponent|endslot|fimcomponente)\\b"
         },
         {
           "name": "keyword.control.asset.lte",
@@ -444,7 +444,7 @@
         },
         {
           "name": "keyword.control.auth.lte",
-          "match": "(?<![\\w.@])@(auth|endauth|guest|endguest)\\b"
+          "match": "(?<![\\w.@])@(auth|endauth|guest|endguest|autenticado|fimautenticado|visitante|fimvisitante)\\b"
         },
         {
           "name": "keyword.control.security.lte",

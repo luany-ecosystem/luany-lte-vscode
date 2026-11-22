@@ -133,6 +133,12 @@ Command palette: **Luany LTE: Validate views**.
 
 ---
 
+## Portuguese directives
+
+Projects with `'syntax' => 'pt'` (LTE 1.4) can write `@se`, `@paracada`, `@secao`, `@fimse`… The extension highlights them, indents their blocks and has snippets (`se`, `sesenao`, `paracada`, `listar`, `secao`, `estende`, `incluir`, `autenticado`, `visitante`, `enquanto`). Errors come from `luany view:check`, which uses the project's syntax.
+
+---
+
 ## About Luany Template Engine
 
 LTE is the template engine of the Luany framework: `.lte` files are parsed by a hand-written scanner and compiled to cached PHP, with output escaped by default.
