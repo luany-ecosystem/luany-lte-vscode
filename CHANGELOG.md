@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [Unreleased]
+## [1.3.1] — 2026-11-22
 
 ### Fixed
 - `package.json` still said 1.2.1 in the 1.3.0 tag, so the packaged extension carried the old version number. Same features as 1.3.0 (Portuguese directives); the release now stamps `package.json`.
